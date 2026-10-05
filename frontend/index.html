@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Opportunities Portal</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Research Title</th>
+                <th>Research Description</th>
+                <th>Research Area</th>
+                <th>Faculty Name</th>
+                <th>Department</th>
+                <th>Required Skills</th>
+                <th>Available Positions</th>
+                <th>Application Deadline</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="opportunities-table-body">
+            <!-- Opportunities will be populated here -->
+        </tbody>
+    </table>
+    <form>
+        <input type="text" name="research_title" placeholder="Research Title" required>
+        <input type="text" name="research_description" placeholder="Research Description" required>
+        <input type="text" name="research_area" placeholder="Research Area" required>
+        <input type="text" name="faculty_name" placeholder="Faculty Name" required>
+        <input type="text" name="department" placeholder="Department" required>
+        <input type="text" name="required_skills" placeholder="Required Skills" required>
+        <input type="number" name="available_positions" placeholder="Available Positions" required>
+        <input type="date" name="application_deadline" placeholder="Application Deadline">
+        <input type="text" name="status" placeholder="Status">
+        <button type "submit">Create Opportunity</button>
+        
+    </form>
+
+    <script src="app.js"> </script> 
+</body>
+</html>
