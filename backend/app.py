@@ -34,10 +34,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-
-
 # POST /api/opportunitiess
-
 # GET /api/opportunities
 @app.get("/api/opportunities")
 def get_opportunities(db : Session = Depends(get_db)):
