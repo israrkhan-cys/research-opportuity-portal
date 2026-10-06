@@ -1,20 +1,3 @@
-"""
-Your university currently shares research opportunities through emails, WhatsApp
-groups, and noticeboards. Because the information is scattered across different
-platforms, many students miss valuable opportunities, while faculty members find
-it difficult to manage their research openings.
-The university has therefore decided to develop a Research Opportunity Portal
-where faculty members can post, view, update, and manage research opportunities
-in one place.
-
-You are working as a junior software developer in the university’s software deve-
-lopment team. Your responsibility is to develop a complete web-based application
-
-consisting of a backend REST API, database, and a simple frontend interface for
-managing research opportunities.
-
-"""
-
 from fastapi import FastAPI, Depends, HTTPException
 from fastapi.staticfiles import StaticFiles
 import backend.models as models
@@ -34,7 +17,15 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# POST /api/opportunitiess
+# POST /api/opportunities
+@app.post("/api/opportunities")
+def create_opportunity(opportunity: database_model.ResearchOpportunity, db: Session = Depends(get_db)):
+    db.add(opportunity)
+    db.commit()
+    db.refresh(opportunity)
+    return opportunity
+                                                                                                
+
 # GET /api/opportunities
 @app.get("/api/opportunities")
 def get_opportunities(db : Session = Depends(get_db)):
@@ -51,12 +42,29 @@ def get_opportunity(id: int, db: Session = Depends(get_db)):
     return opportunity
 
 # PUT /api/opportunities/:id
+@app.put("/api/opportunities/{id}")
+def update_opportunity(id: int, updated_opportunity: database_model.ResearchOpportunity, db: Session = Depends(get_db)):
+    opportunity = db.query(database_model.ResearchOpportunity).filter(database_model.ResearchOpportunity.id == id).first()
+    if not opportunity:
+        raise HTTPException(status_code=404, detail="Opportunity not found")
+    for key, value in updated_opportunity.dict().items():
+        setattr(opportunity, key, value)
+    db.commit()
+    db.refresh(opportunity)
+    return opportunity
+
 
 # Delete /api/opportunities/:id
-
-
+@app.delete("/api/opportunities/{id}")
+def delete_opportunity(id: int, db: Session =Depends(get_db)):
+    opportunity = db.query(database_model.ResearchOpportunity).filter(database_model.ResearchOpportunity.id == id).first();
+    if not opportunity:
+        return HTTPException(status_code=404, detail="Opportunity not found")
+    db.delete(opportunity)
+    db.commit()
+    
 app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
-
+ 
 
 
 
