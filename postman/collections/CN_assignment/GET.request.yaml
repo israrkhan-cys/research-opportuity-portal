@@ -1,8 +1,7 @@
 $kind: http-request
-name: http://127.0.0.1:8000/api/opportunities
 description: ""
-url: http://127.0.0.1:8000/api/opportunities/6
-method: DELETE
+url: http://127.0.0.1:8000/api/opportunities
+method: GET
 body:
   type: json
   content: |-
@@ -17,4 +16,4 @@ body:
       "application_deadline": "2026-12-01",
       "status": "Open"
     }
-order: 1790665030996
+order: 409465768876276

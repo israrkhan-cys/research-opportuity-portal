@@ -1,0 +1,20 @@
+$kind: http-request
+description: ""
+url: http://127.0.0.1:8000/api/opportunities/1
+method: PUT
+body:
+  type: json
+  content: |-
+    {
+            "research_area": "Cybersecurity",
+            "id": 1,
+            "department": "Computer science",
+            "available_positions": 2,
+            "status": "Closed",
+            "research_description": "Exploring ML models to detect anomalous network traffic in real time.",
+            "faculty_name": "Dr. Ahmed Khan",
+            "research_title": "Machine Learning for Network Intrusion Detection",
+            "required_skills": "Python, Machine Learning, Networking",
+            "application_deadline": "2026-11-15"
+        }
+order: 4174404346682188
