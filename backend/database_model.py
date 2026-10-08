@@ -1,5 +1,5 @@
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String, Text, Enum
+from sqlalchemy import Column, Integer, String, Text, Enum , Date
 from enum import Enum as PyEnum
 
 
@@ -20,8 +20,5 @@ class ResearchOpportunity(Base):
     department = Column(String(255), nullable=False)    
     required_skills = Column(String(255), nullable=False)
     available_positions = Column(Integer, nullable=False)
-    application_deadline = Column(String(255), nullable=False)
+    application_deadline = Column(Date, nullable=False)
     status = Column(Enum("Open", "Closed", name="status_enum"), default="Open")
-
-
-    

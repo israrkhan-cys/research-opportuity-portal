@@ -17,35 +17,35 @@
         </ul>
     </nav>
 
-    <!--Putting a Navigation Bar at the top of the page-->
-    </nav>  
     <div class="container">
         <h1>Create New Opportunity</h1>
-        <form>
+        <form class="create-form" id="create-opportunity-form">
             <label for="title">Research Title:</label>
-            <input type="text" id="title" name="title" required>
+            <input type="text" id="title" name="research_title" required>
             <label for="description">Research Description:</label>
-            <textarea id="description" name="description" required></textarea>  
+            <textarea id="description" name="research_description" required></textarea>  
             <label for="area">Research Area:</label>
-            <input type="text" id="area" name="area" required>
+            <input type="text" id="area" name="research_area" required>
             <label for="faculty">Faculty Name:</label>
-            <input type="text" id="faculty" name="faculty" required>
+            <input type="text" id="faculty" name="faculty_name" required>
             <label for="department">Department:</label>
             <input type="text" id="department" name="department" required>
             <label for="skills">Required Skills:</label>
-            <input type="text" id="skills" name="skills" required>  
+            <input type="text" id="skills" name="required_skills" required>  
             <label for="positions">Available Positions:</label>
-            <input type="number" id="positions" name="positions" required>
+            <input type="number" id="positions" name="available_positions" required>
             <label for="deadline">Application Deadline:</label>
-            <input type="date" id="deadline" name="deadline" required>
+            <!--taking the date in yyyy-mm-dd format-->
+            <input type="date" id="deadline" name="application_deadline" required>
             <label for="status">Status:</label>
              <select name="status" id="status">
-                <option value="open">Open</option>
-                <option value="closed">Closed</option>
+                <option value="Open">Open</option>
+                <option value="Closed">Closed</option>
             </select>
             <button type="submit">Create Opportunity</button>
         </form>
     </div>
+    
     <script src="app.js"></script>
 </body>
 </html>

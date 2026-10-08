@@ -1,6 +1,6 @@
+from datetime import date
 from pydantic import BaseModel
 from enum import Enum
-
 from backend.database_model import StatusEnum
 
 
@@ -19,7 +19,7 @@ class ResearchOpportunity(BaseModel):
     department: str
     required_skills: str
     available_positions: int
-    application_deadline: str   
+    application_deadline:  date   
     status: StatusEnum
     
     
