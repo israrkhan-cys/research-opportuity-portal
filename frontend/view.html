@@ -3,18 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Opportunities</title>
+    <title>Opportunity Details | Research Opportunities</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
       <nav class="navbar" id="" >
-        <div class="logo">Research Opportunities Portal</div>
+        <div class="logo"><a href="index.html">Research Opportunities Portal</a></div>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="view.html">View Opportunities</a></li>
-            <li><a href="create.html">Create Opportunity</a></li>
+            <li><a href="index.html" aria-current="page">Opportunities</a></li>
+            <li><a href="create.html">Post opportunity</a></li>
         </ul>
     </nav>
-    
+    <main class="page-shell">
+        <a class="back-link" href="index.html">← Back to opportunities</a>
+        <div class="detail-card" id="opportunity-detail">
+            <p class="message">Loading opportunity...</p>
+        </div>
+    </main>
+    <script src="app.js"></script>
 </body>
 </html>

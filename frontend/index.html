@@ -3,40 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research Opportunities Portal</title>
+    <title>Research Opportunities | Portal</title>
     <link rel="stylesheet" href="style.css">
     
 </head>
 <body>
-    <!--Putting a Navigation Bar at the top of the page-->
-    <div class="navbar">
-        <div class="logo">Research Opportunities Portal</div>
+    <nav class="navbar">
+        <div class="logo"><a href="index.html">Research Opportunities Portal</a></div>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="view.html">View Opportunities</a></li>
-            <li><a href="create.html">Create Opportunity</a></li>
+            <li><a href="index.html" aria-current="page">Opportunities</a></li>
+            <li><a href="create.html">Post opportunity</a></li>
         </ul>
-    </div>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Research Title</th>
-                <th>Research Description</th>
-                <th>Research Area</th>
-                <th>Faculty Name</th>
-                <th>Department</th>
-                <th>Required Skills</th>
-                <th>Available Positions</th>
-                <th>Application Deadline</th>
-                <th>Status</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody id="opportunities-table-body">
-            <!-- Opportunities will be populated here -->
-        </tbody>
-    </table>
+    </nav>
+    <main class="page-shell">
+        <section class="toolbar" aria-label="Opportunity filters">
+            <select id="status-filter" aria-label="Filter by status">
+                <option value="all">All statuses</option>
+                <option value="Open">Open only</option>
+                <option value="Closed">Closed only</option>
+            </select>
+        </section>
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr><th>ID</th><th>Opportunity</th><th>Description</th><th>Faculty / department</th><th>Skills</th><th>Positions</th><th>Deadline</th><th>Status</th><th>Actions</th></tr>
+                </thead>
+                <tbody id="opportunities-table-body"></tbody>
+            </table>
+            <p class="message" id="opportunities-message">Loading opportunities...</p>
+        </div>
+    </main>
     
     <script src="app.js"> </script> 
 </body>

@@ -3,48 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create New opportunity</title>
+    <title>Post Opportunity | Research Opportunities</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!--Putting a Navigation Bar at the top of the page-->
     <nav class="navbar">
-        <div class="logo">Research Opportunities Portal</div>
+        <div class="logo"><a href="index.html">Research Opportunities Portal</a></div>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="view.html">View Opportunities</a></li>
-            <li><a href="create.html">Create Opportunity</a></li>
+            <li><a href="index.html">Opportunities</a></li>
+            <li><a href="create.html" aria-current="page">Post opportunity</a></li>
         </ul>
     </nav>
 
-    <div class="container">
-        <h1>Create New Opportunity</h1>
-        <form class="create-form" id="create-opportunity-form">
-            <label for="title">Research Title:</label>
-            <input type="text" id="title" name="research_title" required>
-            <label for="description">Research Description:</label>
-            <textarea id="description" name="research_description" required></textarea>  
-            <label for="area">Research Area:</label>
-            <input type="text" id="area" name="research_area" required>
-            <label for="faculty">Faculty Name:</label>
-            <input type="text" id="faculty" name="faculty_name" required>
-            <label for="department">Department:</label>
-            <input type="text" id="department" name="department" required>
-            <label for="skills">Required Skills:</label>
-            <input type="text" id="skills" name="required_skills" required>  
-            <label for="positions">Available Positions:</label>
-            <input type="number" id="positions" name="available_positions" required>
-            <label for="deadline">Application Deadline:</label>
-            <!--taking the date in yyyy-mm-dd format-->
-            <input type="date" id="deadline" name="application_deadline" required>
-            <label for="status">Status:</label>
-             <select name="status" id="status">
-                <option value="Open">Open</option>
-                <option value="Closed">Closed</option>
-            </select>
-            <button type="submit">Create Opportunity</button>
-        </form>
-    </div>
+    <main class="page-shell">
+        <h1 id="form-heading">Post a research opportunity.</h1>
+        <div class="form-layout">
+            <form class="form-card" id="create-opportunity-form">
+                <p class="required-note">All fields are required unless noted.</p>
+                <div class="form-grid">
+                    <div class="field full"><label for="title">Research title</label><input type="text" id="title" name="research_title" placeholder="e.g. Coastal ecosystems and climate resilience" required></div>
+                    <div class="field full"><label for="description">Research description</label><textarea id="description" name="research_description" placeholder="Describe the project, its goals and what a contributor will work on..." required></textarea></div>
+                    <div class="field"><label for="area">Research area</label><input type="text" id="area" name="research_area" placeholder="e.g. Environmental science" required></div>
+                    <div class="field"><label for="department">Department</label><input type="text" id="department" name="department" placeholder="e.g. Biology" required></div>
+                    <div class="field"><label for="faculty">Faculty lead</label><input type="text" id="faculty" name="faculty_name" placeholder="Full name" required></div>
+                    <div class="field"><label for="skills">Required skills</label><input type="text" id="skills" name="required_skills" placeholder="Separate skills with commas" required></div>
+                    <div class="field"><label for="positions">Available positions</label><input type="number" id="positions" name="available_positions" min="1" placeholder="1" required></div>
+                    <div class="field"><label for="deadline">Application deadline</label><input type="date" id="deadline" name="application_deadline" required></div>
+                    <div class="field"><label for="status">Status</label><select name="status" id="status"><option value="Open">Open</option><option value="Closed">Closed</option></select></div>
+                </div>
+                <div class="form-actions"><a class="button button-secondary" href="index.html">Cancel</a><button type="submit">Publish opportunity</button></div>
+            </form>
+        </div>
+    </main>
     
     <script src="app.js"></script>
 </body>
