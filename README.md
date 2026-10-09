@@ -57,7 +57,7 @@ research-opportunity-portal/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/username/research-opportunity-portal.git
+git clone https://github.com/israrkhan-cys/research-opportunity-portal.git
 cd research-opportunity-portal
 ```
 
@@ -66,7 +66,7 @@ cd research-opportunity-portal
 ```bash
 python -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
-pip install fastapi uvicorn sqlalchemy pymysql python-dotenv
+pip install -r requirements.txt
 ```
 
 ### 3. Set up the database
